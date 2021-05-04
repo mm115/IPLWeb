@@ -1,0 +1,48 @@
+﻿@model IPLWeb.Models.Match
+
+@{
+    ViewData["Title"] = "Match Centre";
+}
+
+<h1 class="text-center">@Model.VenueName</h1>
+<h4 class="text-center">@Model.MatchDate.ToString("dddd, dd MMMM yyyy")</h4>
+<h5 class="text-center">Match Begins: @Model.MatchTime</h5>
+<div class="row">
+    <div class="col-md-2">
+        <h4 class="pt-5">@Model.Team1.TeamName</h4>
+    </div>
+    <div class="col-md-4">
+        <img src="~/teams/@Model.Team1.TeamID@Model.Team1.Extension" class="img-fluid"/>
+    </div>
+    <div class="col-md-4">
+        <img src="~/teams/@Model.Team2.TeamID@Model.Team2.Extension" class="img-fluid" />
+    </div>
+    <div class="col-md-2">
+        <h4 class="pt-5">@Model.Team2.TeamName</h4>
+    </div>
+</div>
+<hr />
+<h1 class="text-center">Match Comments
+    <a class="btn btn-dark text-center"
+       asp-action="AddComment" asp-route-id="@Model.TeamID">Add Comments</a>    
+</h1>
+<hr />
+<div class="row" style="margin-bottom: 200px">
+    @if (Model.Comments.Count() == 0)
+    {
+        <h1 class="font1 text-center">No Comments.</h1>
+    }
+    else
+    {
+        @foreach(var comment in Model.Comments)
+        {
+            <div class="col-12">
+                <p class="text-justify">
+                    @comment.CommentText
+                </p>
+                On @comment.CommentDate By @comment.UserID
+            </div>
+            <hr />
+        }
+    }
+</div>

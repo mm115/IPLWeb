@@ -1,0 +1,44 @@
+﻿@model IEnumerable<IPLWeb.Models.Comment>
+
+@{
+    ViewData["Title"] = "My Comments";
+}
+
+<h1 class="text-center">My Comments</h1>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Home Team
+            </th>
+            <th>
+                Guest Team
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Match.Team1.TeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Match.Team2.TeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommentText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommentDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

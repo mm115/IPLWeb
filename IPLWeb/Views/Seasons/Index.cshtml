@@ -1,0 +1,35 @@
+﻿@model IEnumerable<IPLWeb.Models.Season>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">All Season Details</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SeasonYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeasonYear)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.SeasonID">Edit</a> |
+                <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.SeasonID">Details</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.SeasonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

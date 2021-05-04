@@ -1,0 +1,41 @@
+﻿@model IEnumerable<IPLWeb.Models.Team>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">All Team Details</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Team Logo
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/teams/@item.TeamID@item.Extension" style="width:50%" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamName)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.TeamID">Edit</a> |
+                <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.TeamID">Details</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.TeamID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

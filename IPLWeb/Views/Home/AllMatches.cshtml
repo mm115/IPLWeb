@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IPLWeb.Models.Match>
+
+@{
+    ViewData["Title"] = "All Matches";
+}
+<div class="text-center">
+    <h1>All Matches</h1>
+</div>
+<hr />
+<form asp-action="AllMatches" method="get">
+    <p>
+        Season:
+        <select onchange="this.form.submit()" name="id" asp-items="ViewBag.Seasons">
+        </select> |
+        <a asp-action="AllMatches">All Matches</a>
+    </p>
+</form>
+<div class="row" style="margin-bottom: 200px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-12 border-bottom mb-2 p-4">
+            <h2>@item.MatchDate.ToString("dddd, dd MMMM yyyy")</h2>
+            <div class="row border-top p-2">
+                <div class="col-md-2">
+                    <img src="~/teams/@item.Team1.TeamID@item.Team1.Extension" class="img-fluid" style="width:40%;" /> vs
+                    <img src="~/teams/@item.Team2.TeamID@item.Team2.Extension" class="img-fluid" style="width:40%;" />
+                </div>
+                <div class="col-md-4">
+                    <h4>@item.Team1.TeamName</h4>
+                    <h4>@item.Team2.TeamName</h4>
+                </div>
+                <div class="col-md-4">
+                    <h5>@item.MatchTime</h5>
+                    <h6>@item.VenueName</h6>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-dark btn-block text-center"
+                       asp-action="MatchCentre" asp-route-id="@item.TeamID">Match Centre</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿@model IPLWeb.Models.Season
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center">Season Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SeasonYear)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SeasonYear)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-success" asp-route-id="@Model.SeasonID">Edit</a> |
+    <a asp-action="Index">View All Seasons</a>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPLWeb", "IPLWeb\IPLWeb.csproj", "{86C1998F-9836-4619-81E6-EBC69451218B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86C1998F-9836-4619-81E6-EBC69451218B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C1998F-9836-4619-81E6-EBC69451218B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C1998F-9836-4619-81E6-EBC69451218B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C1998F-9836-4619-81E6-EBC69451218B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5631362D-1E47-44EF-90F4-6DD3E5F568E9}
+	EndGlobalSection
+EndGlobal

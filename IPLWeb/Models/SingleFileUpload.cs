@@ -10,7 +10,7 @@ namespace IPLWeb.Models
     public class SingleFileUpload
     {
         [Required]
-        [Display(Name = "Image File")]
+        [Display(Name = "Image File")] // this code will pick image
         public IFormFile FormFile { get; set; }
     }
 }

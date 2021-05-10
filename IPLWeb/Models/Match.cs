@@ -10,29 +10,29 @@ namespace IPLWeb.Models
     public class Match
     {
         [Key]
-        public int TeamID { get; set; }
+        public int TeamID { get; set; } // this is primary key
 
         [Required]
         [StringLength(100)]
         [Display(Name = "Venue Name")]
-        public string VenueName { get; set; }
+        public string VenueName { get; set; } // it will show the address of match
 
         [Required]
         [Display(Name = "Match Date")]
-        public DateTime MatchDate { get; set; }
+        public DateTime MatchDate { get; set; } // it will show the match date
 
         [Required]
         [StringLength(100)]
         [Display(Name = "Match Time")]
-        public string MatchTime { get; set; }
+        public string MatchTime { get; set; } // it show the match time
 
         [Required]
         [Display(Name = "Season Year")]
-        public int SeasonID { get; set; }
+        public int SeasonID { get; set; } // this is foreign key
 
         [ForeignKey("SeasonID")]
         [InverseProperty("Matches")]
-        public virtual Season Season { get; set; }
+        public virtual Season Season { get; set; } 
 
         [Required]
         [Display(Name = "Team 1")]

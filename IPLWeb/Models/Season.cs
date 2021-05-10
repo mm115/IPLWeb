@@ -9,12 +9,12 @@ namespace IPLWeb.Models
     public class Season
     {
         [Key]
-        public int SeasonID { get; set; }
+        public int SeasonID { get; set; } // this is primary key
 
         [Required]
         [StringLength(100)]
         [Display(Name = "Season Year")]
-        public string SeasonYear { get; set; }
+        public string SeasonYear { get; set; } // this show the year of season
 
         public virtual ICollection<Match> Matches { get; set; }
 

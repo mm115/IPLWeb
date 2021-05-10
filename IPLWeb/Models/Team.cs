@@ -10,19 +10,19 @@ namespace IPLWeb.Models
     public class Team
     {
         [Key]
-        public int TeamID { get; set; }
+        public int TeamID { get; set; } // this is primary key
 
         [Required]
         [StringLength(100)]
         [Display(Name = "Team Name")]
-        public string TeamName { get; set; }
+        public string TeamName { get; set; } // this is team name
 
         [Required]
         [StringLength(20)]
         public string Extension { get; set; }
 
         [NotMapped]
-        public SingleFileUpload File { get; set; }
+        public SingleFileUpload File { get; set; } // this shows the picture of team
 
         public virtual ICollection<Match> Team1Matches { get; set; }
 
